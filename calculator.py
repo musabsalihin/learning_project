@@ -11,7 +11,7 @@ def calculate(n1,n2, operator):
     elif operator == '/':
         while n1 == 0:
             print("First number can not be zero.")
-            n1 = float(input("Please input first number: "))
+            n1 = float(input("Please insert first number again: "))
         result = n1/n2
 
     return result
@@ -64,12 +64,12 @@ logo = """
 
 print(logo)
 
-sen = 1
+sen = True
 history = 0
 next = 'n'
-while sen > 0:
+while sen is True:
     if next == "n" or next == "N":
-        n1 = float(input("Please input first number: "))
+        n1 = float(input("Please insert first number: "))
     else:
         n1 = result
 
@@ -78,7 +78,7 @@ while sen > 0:
         print("Your operation is not valid\nPlease fill it again")
         operator = input("Please choose your operation\n+\n-\n*\n/\n")
 
-    n2 = float(input("Please input second number: "))
+    n2 = float(input("Please insert second number: "))
 
     result = calculate(n1,n2,operator)
 
@@ -88,7 +88,7 @@ while sen > 0:
 
     next = input(f"If you wish to continue with previous value {result} press 'y'  if not press 'n'.\nIf you wish to terminate this program press any key.\n")
     if checkNext(next) is False:
-        sen = -1
+        sen = False
 
 print("\n********************Calculation History*******************\n")
 print_history(history)
